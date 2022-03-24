@@ -6,6 +6,12 @@ body {
 
 header {
     text-align: center;
+
+}
+
+img.user {
+    border-radius: 50%;
+    margin-top: -50px;
 }
 
 main {
@@ -29,4 +35,8 @@ article p {
 
 a {
     color: black;
+}
+
+footer {
+    border-top: 1px solid black;
 }
