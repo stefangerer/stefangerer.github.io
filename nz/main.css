@@ -4,10 +4,9 @@ body {
     background-color: silver;
 }
 
-h1 {
-    color: rgb(255, 255, 0);
-    font-size: 40px;
-    border: 3px black;
-    background-color: blue;
-    width: 50%
+main {
+    background-color: white;
+    max-width: 1024px;
+    margin: auto
 }
+
