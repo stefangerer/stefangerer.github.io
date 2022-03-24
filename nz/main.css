@@ -1,7 +1,11 @@
-/* Stile für die Neuseelandreise */ 
+/* Stile für die Neuseelandreise */
 
 body {
     background-color: silver;
+}
+
+header {
+    text-align: center;
 }
 
 main {
@@ -12,9 +16,17 @@ main {
 
 article {
     padding: 1em;
-    
+
 }
 
 article p {
+
+
+
+    line-height: 1.3em;
     text-align: justify
+}
+
+a {
+    color: black;
 }
