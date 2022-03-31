@@ -1,12 +1,16 @@
 /* Stile für die Neuseelandreise */
 
+/*Google Donts laden */ 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:ital@1&family=Roboto:wght@300&display=swap');
+
 body {
     background-color: #eeeeee;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -23,6 +27,14 @@ main {
     background-color: white;
     max-width: 1024px;
     margin: auto
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main p {
+    font-family: 'Roboto', sans-serif;
 }
 
 article {
