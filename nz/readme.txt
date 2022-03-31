@@ -1,3 +1,5 @@
-# Learning 
+1.Git Hub einlogen 
+2.VSCode einschalten 
 
-hier kommt der inhalt
+Stand Klonen 
+f1 taste ("clone") -> zulassen -> einlogen  -> dann repository auswählen -> lokalen punkt abspeichern 
