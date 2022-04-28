@@ -54,6 +54,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
         L.circleMarker([hut.lat, hut.lng], {
-            color: statusColor
+            color: statusColor,
+            radius: 2
         }).addTo(map).bindPopup(popup);
     }
