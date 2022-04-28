@@ -26,6 +26,16 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Leaflet Bibliothek -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!-- Etappen-Objekt -->
+    <script src="etappen.js"></script>
+
+    <!-- DOC Hütten -->
+    <script src="huts.js"></script>
+
     <!-- Kartenskript (defer ist sehr wichtig -> aufschieben -> script wird erst ausgeführt wenn alles da ist was man laden kann)-->
     <script defer src="main.js"></script>
 
@@ -67,6 +77,10 @@
 
             <h3>Übersichtskarte</h3>
             <div id="map"></div>
+
+            <div>
+                <nav id="navigation"></nav>
+            </div>
 
             <h3>Links</h3>
             <ul>
