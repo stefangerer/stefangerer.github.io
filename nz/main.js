@@ -1,12 +1,29 @@
 // Neuseelandreise-Skript 
 
-var map = L.map('map').setView([-43.512, 170.105], 11);
+let zoom = 11;
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+let coords = [
+    ETAPPEN[8].lat,
+    ETAPPEN[8].lng
+];
+
+let startLayer = L.tileLayer.provider("OpenStreetMap.Mapnik");
+
+let map = L.map('map', {
+    center: coords,
+    zoom: zoom,
+    layers: [
+        startLayer
+    ],
+});
+
+let layerControl = L.control.layers({
+    "OpenStreetMap": startLayer,
+    "Esri Topo Map": L.tileLayer.provider("Esri.WorldTopoMap"),
+    "Esri Satellitenbild": L.tileLayer.provider("Esri.WorldImagery"),
+    "Open Topo Map": L.tileLayer.provider("OpenTopoMap"),
+    "Stamen Watercolor": L.tileLayer.provider("Stamen.Watercolor"),
 }).addTo(map);
-
-
 
     for (let etappe of ETAPPEN) {
         let popup = `
@@ -58,3 +75,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             radius: 2
         }).addTo(map).bindPopup(popup);
     }
+
+L.control.fullscreen().addTo(map); 
+
+let miniMap = new L.Control.Minimap(
+    L.tileLayer.provider("OpenStreetMap.Mapnik"), {
+        toggleDisplay: true
+    }
+).addTo(map); 
