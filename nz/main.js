@@ -78,7 +78,7 @@ for (let hut of HUTS) {
 
 L.control.fullscreen().addTo(map);
 
-let miniMap = new L.Control.Minimap(
+let miniMap = new L.Control.MiniMap(
     L.tileLayer.provider("OpenStreetMap.Mapnik"), {
         toggleDisplay: true
     }
