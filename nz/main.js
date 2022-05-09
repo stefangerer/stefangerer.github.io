@@ -25,8 +25,8 @@ let layerControl = L.control.layers({
     "Stamen Watercolor": L.tileLayer.provider("Stamen.Watercolor"),
 }).addTo(map);
 
-    for (let etappe of ETAPPEN) {
-        let popup = `
+for (let etappe of ETAPPEN) {
+    let popup = `
         <h3>${etappe.titel} (Etappe ${etappe.nr})</h3>
         <ul>
             <li>geogr. Länge: ${etappe.lng}</li>
@@ -35,24 +35,24 @@ let layerControl = L.control.layers({
             <li><a href="https://${etappe.github}.github.io/nz/">Link zur Etappenseite</a></li>
         </ul>
         `;
-        //console.log(etappe);
-        let navClass = "etappenLink"; 
+    //console.log(etappe);
+    let navClass = "etappenLink";
 
-        let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
-        
-        if (etappe.nr == 8){
-            mrk.openPopup();
-            navClass = "etappenLink etappeAktuell"; 
-        }
+    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 
-        // Etappennavigation erweitern
-        let link = `<a href="https://${etappe.github}.github.io/nz/" class="${navClass}" title="${etappe.titel}">${etappe.nr}</a>`;
-        document.querySelector("#navigation").innerHTML += link;
+    if (etappe.nr == 8) {
+        mrk.openPopup();
+        navClass = "etappenLink etappeAktuell";
     }
-    
-    // DOC Hütten anzeigen
-    for (let hut of HUTS) {
-        let popup = `
+
+    // Etappennavigation erweitern
+    let link = `<a href="https://${etappe.github}.github.io/nz/" class="${navClass}" title="${etappe.titel}">${etappe.nr}</a>`;
+    document.querySelector("#navigation").innerHTML += link;
+}
+
+// DOC Hütten anzeigen
+for (let hut of HUTS) {
+    let popup = `
             <h3>${hut.name}</h3>
             <h4>${hut.region}</h3>
             <hr>
@@ -62,24 +62,24 @@ let layerControl = L.control.layers({
             <a href="${hut.link}" target="Neuseeland">Link zur Hütte</a>
         `;
 
-        let statusColor; 
-        if(hut.open == true){
-            statusColor = "green"; 
-        } else {
-            statusColor = "red"; 
-        }
-
-
-        L.circleMarker([hut.lat, hut.lng], {
-            color: statusColor,
-            radius: 2
-        }).addTo(map).bindPopup(popup);
+    let statusColor;
+    if (hut.open == true) {
+        statusColor = "green";
+    } else {
+        statusColor = "red";
     }
 
-L.control.fullscreen().addTo(map); 
+
+    L.circleMarker([hut.lat, hut.lng], {
+        color: statusColor,
+        radius: 2
+    }).addTo(map).bindPopup(popup);
+}
+
+L.control.fullscreen().addTo(map);
 
 let miniMap = new L.Control.Minimap(
     L.tileLayer.provider("OpenStreetMap.Mapnik"), {
         toggleDisplay: true
     }
-).addTo(map); 
+).addTo(map);
